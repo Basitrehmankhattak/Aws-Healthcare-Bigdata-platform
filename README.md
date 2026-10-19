@@ -10,7 +10,7 @@ An event-driven, cloud-native healthcare data platform built on AWS to process r
 
 ##  System Architecture
 
-![AWS Healthcare Big Data Architecture](./images/architecture-diagram.jpg)
+![AWS Healthcare Big Data Architecture](./docs/architecture-diagram.jpg)
 
 ### Pipeline Workflow
 1. **Ingestion:** Clinical batch CSV/JSON records are validated via **AWS Lambda**, while IoT device telemetry streams directly via **IoT Core / Kinesis Firehose** into Amazon S3 raw storage.
@@ -26,25 +26,25 @@ An event-driven, cloud-native healthcare data platform built on AWS to process r
 
 ### 1. S3 Medallion Data Lake Layout (`health-analytics-demo`)
 *Organized into clear Bronze, Silver, Gold, and ML Result partitions with cross-region backups.*
-![S3 Data Lake Layout](./images/s3-bucket-structure.png)
+![S3 Data Lake Layout](./docs/s3-bucket-structure.png)
 
 ---
 
 ### 2. AWS Step Functions Execution Graph (`healthcare-etl-orchestration`)
 *Automated execution sequence handling schema crawlers, data transformation jobs, and quality checks.*
-![Step Functions Execution Workflow](./images/step-functions-workflow.jpg)
+![Step Functions Execution Workflow](./docs/step-functions-workflow.jpg)
 
 ---
 
 ### 3. SageMaker Anomaly Detection Model
 *ML model analyzing Systolic BP and Heart Rate metrics to flag patient anomalies in real time.*
-![SageMaker Anomaly Detection Notebook](./images/sagemaker-anomaly-detection.png)
+![SageMaker Anomaly Detection Notebook](./docs/sagemaker-anomaly-detection.png)
 
 ---
 
 ### 4. Amazon QuickSight Clinical Dashboard
 *Real-time clinical insights visualizing average patient vitals, diagnosis distributions, and alert metrics.*
-![QuickSight Clinical Insights Dashboard](./images/quicksight-dashboard.png)
+![QuickSight Clinical Insights Dashboard](./docs/quicksight-dashboard.png)
 
 ---
 
